@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GlobalTrack — Shipment Tracking</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">GLOBAL<span>TRACK</span></div>
+    <div class="nav-right">
+        <a href="#" class="nav-link">How it works</a>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="eyebrow">SHIPMENT VISIBILITY, ON DEMAND</div>
+    <h1 class="headline">
+        Enter the code.
+        <span class="accent">Skip the wait.</span>
+    </h1>
+    <p class="sub">Real-time tracking, live location, and delivery status from one code. No account, no app, no waiting on a call center.</p>
+
+    <div class="track-form">
+        <input type="text" id="trackingInput" class="mono" placeholder="GT-9X8A7F3K" autocomplete="off" />
+        <button class="btn-pill" onclick="trackShipment()">Track shipment</button>
+    </div>
+    <div id="notice" class="notice error"></div>
+</div>
+
+<div id="cardWrap" class="card-wrap">
+    <div class="card">
+        <div class="card-top">
+            <div>
+                <div class="card-eyebrow">TRACKING</div>
+                <div class="card-title mono" id="cardTrackingNumber">—</div>
+            </div>
+            <div class="step-dots" id="stepDots"></div>
+        </div>
+
+        <div class="info-row">
+            <div class="left">
+                <div class="info-icon">🌍</div>
+                <div>
+                    <div class="info-label">ROUTE</div>
+                    <div class="info-value" id="routeValue">—</div>
+                </div>
+            </div>
+            <div class="status-chip" id="statusChip">—</div>
+        </div>
+
+        <div class="info-row" id="productRow">
+            <div class="left">
+                <div class="info-icon">📦</div>
+                <div>
+                    <div class="info-label">PRODUCT</div>
+                    <div class="info-value" id="productValue">—</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="left">
+                <div class="info-icon">🕒</div>
+                <div>
+                    <div class="info-label">LAST UPDATE</div>
+                    <div class="info-value mono" id="updateValue">—</div>
+                </div>
+            </div>
+            <div class="info-right-value" id="progressValue">0%</div>
+        </div>
+
+        <div class="progress-strip"><div class="fill" id="progressFill"></div></div>
+
+        <!-- Live location preview — visible by default, opens the full map page on click -->
+        <div class="mini-map-frame" id="miniMapFrame">
+            <div class="mini-map" id="miniMap"></div>
+            <div class="mini-map-overlay">
+                <span class="mini-map-tag">📍 Live location</span>
+                <span class="mini-map-expand">Open full map →</span>
+            </div>
+        </div>
+
+        <div class="cta-line">
+            <a href="#" id="fullMapLink" class="cta-navy">View live map</a>
+        </div>
+    </div>
+</div>
+
+<div class="footer-note">&copy; 2026 GlobalTrack Logistics</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/track.js"></script>
+</body>
+</html>

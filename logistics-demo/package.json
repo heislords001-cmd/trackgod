@@ -1,0 +1,15 @@
+{
+  "name": "globaltrack-demo",
+  "version": "1.0.0",
+  "description": "GlobalTrack logistics tracking demo (UI/UX pitch, no real transactions)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "multer": "^2.0.1",
+    "sqlite3": "^5.1.7"
+  }
+}

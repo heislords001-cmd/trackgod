@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GlobalTrack — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">GLOBAL<span>TRACK</span> <span style="color:#6B6558; font-size:15px; font-weight:600;">/ ADMIN</span></div>
+    <div class="nav-right">
+        <a href="/" class="nav-link">← Public tracking page</a>
+    </div>
+</div>
+
+<div class="shell">
+
+    <div class="admin-grid">
+        <div class="panel">
+            <div class="panel-head">
+                <div class="eyebrow-sm">STEP 1</div>
+                <h2>Add a route</h2>
+            </div>
+            <div class="panel-body">
+                <div class="field"><label>Route name</label><input type="text" id="routeName" placeholder="Rotterdam → Singapore" /></div>
+                <div class="input-row-admin">
+                    <div class="field"><label>Start lat</label><input type="text" id="startLat" placeholder="51.9244" /></div>
+                    <div class="field"><label>Start lng</label><input type="text" id="startLng" placeholder="4.4777" /></div>
+                </div>
+                <div class="input-row-admin">
+                    <div class="field"><label>End lat</label><input type="text" id="endLat" placeholder="1.3521" /></div>
+                    <div class="field"><label>End lng</label><input type="text" id="endLng" placeholder="103.8198" /></div>
+                </div>
+                <button class="btn btn-full" onclick="addRoute()">Add route</button>
+                <div id="routeNotice" class="notice" style="margin:16px 0 0; max-width:none;"></div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-head">
+                <div class="eyebrow-sm">STEP 2</div>
+                <h2>Create shipment</h2>
+            </div>
+            <div class="panel-body">
+                <div class="field"><label>Route</label><select id="routeSelect"><option value="">Loading routes…</option></select></div>
+                <div class="field"><label>Product name</label><input type="text" id="productName" placeholder="Freight pallet — electronics" /></div>
+                <div class="field"><label>Product image</label><input type="file" id="productImage" accept="image/png,image/jpeg,image/webp,image/gif" /></div>
+                <div class="input-row-admin">
+                    <div class="field"><label>From</label><input type="text" id="countryFrom" placeholder="Netherlands" /></div>
+                    <div class="field"><label>To</label><input type="text" id="countryTo" placeholder="Singapore" /></div>
+                </div>
+                <div class="field"><label>Recipient name</label><input type="text" id="recipientName" placeholder="Recipient" /></div>
+                <div class="field"><label>Recipient address</label><input type="text" id="recipientAddress" placeholder="Delivery address" /></div>
+                <button class="btn btn-full" onclick="createShipment()">Generate tracking number</button>
+                <div id="shipmentNotice" class="notice" style="margin:16px 0 0; max-width:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-head" style="padding-left:0; margin-bottom:12px;">
+        <div class="eyebrow-sm">MANIFEST LOG</div>
+        <h2>Shipments</h2>
+    </div>
+    <div class="log-table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tracking #</th>
+                    <th>Photo</th>
+                    <th>Product</th>
+                    <th>Route</th>
+                    <th>Status</th>
+                    <th>Progress</th>
+                    <th>Last update</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="shipmentsBody">
+                <tr><td colspan="8" class="empty-state">Loading shipments…</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer-note">&copy; 2026 GlobalTrack Logistics</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>

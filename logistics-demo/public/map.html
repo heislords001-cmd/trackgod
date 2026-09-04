@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Live Map — GlobalTrack</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo">GLOBAL<span>TRACK</span></div>
+</div>
+
+<div class="map-page-top">
+    <a href="/" class="map-back">&larr; Back to tracking</a>
+    <div class="map-meta">
+        <div class="num mono" id="metaNumber">—</div>
+        <div class="route" id="metaRoute">—</div>
+    </div>
+</div>
+
+<div class="map-page-frame">
+    <div class="map-full" id="fullMap"></div>
+</div>
+
+<div class="map-page-status" id="statusPills"></div>
+
+<div class="footer-note">&copy; 2026 GlobalTrack Logistics</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/map-page.js"></script>
+</body>
+</html>
